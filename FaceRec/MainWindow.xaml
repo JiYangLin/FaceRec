@@ -1,0 +1,57 @@
+﻿<Fluent:RibbonWindow x:Class="FaceRec.MainWindow"
+        xmlns:Fluent="urn:fluent-ribbon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FaceRec"
+        mc:Ignorable="d"
+        Icon="mark.ico"  
+        WindowState="Maximized"
+                     Cursor="/FaceRec;component/curFile.cur"
+        Title="" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+
+        
+        
+        <Fluent:Ribbon Grid.Row="0">
+
+            <Fluent:RibbonTabItem Header="人脸识别">
+                <Fluent:RibbonGroupBox Header="人脸检测">
+                    <Fluent:Button  Header="开始检测"  Icon="/FaceRec;component/icon/play.png" LargeIcon="/FaceRec;component/icon/play.png" x:Name="FaceDetecStartBtn" Click="FaceDetecStartBtn_Click"/>
+                    <Fluent:Button  Header="停止检测"  Icon="/FaceRec;component/icon/stop.png" LargeIcon="/FaceRec;component/icon/stop.png" x:Name="FaceDetecStopBtn" Click="FaceDetecStopBtn_Click"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="人脸识别">
+                    <Fluent:Button  Header="开始识别"  Icon="/FaceRec;component/icon/play.png" LargeIcon="/FaceRec;component/icon/play.png" x:Name="FaceRecStartBtn" Click="FaceRecStartBtn_Click"/>
+                    <Fluent:Button  Header="停止识别"  Icon="/FaceRec;component/icon/stop.png" LargeIcon="/FaceRec;component/icon/stop.png" x:Name="FaceRecStopBtn" Click="FaceRecStopBtn_Click"/>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="数据训练">
+                <Fluent:RibbonGroupBox Header="人脸数据采集">
+                    <Fluent:Button  Header="开始采集"  Icon="/FaceRec;component/icon/play.png" LargeIcon="/FaceRec;component/icon/play.png" x:Name="StartCollectBtn" Click="StartCollectBtn_Click"/>
+                    <Fluent:Button  Header="停止采集"  Icon="/FaceRec;component/icon/stop.png" LargeIcon="/FaceRec;component/icon/stop.png" x:Name="StopCollectBtn" Click="StopCollectBtn_Click"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="数据训练">
+                    <Fluent:Button  Header="开始训练"  Icon="/FaceRec;component/icon/find.png" LargeIcon="/FaceRec;component/icon/find.png" x:Name="StartTrainBtn" Click="StartTrainBtn_Click"/>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+        </Fluent:Ribbon>
+
+
+        <Grid Grid.Row="1">
+            <Image  x:Name="img"></Image>
+            <RichTextBox x:Name="rt" Foreground="Black" Background="Black" IsEnabled="False" Visibility="Hidden"/>
+        </Grid>
+
+
+        <Fluent:StatusBar HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Bottom">
+            <Fluent:StatusBarItem Title="" HorizontalAlignment="Left" Content=" " Name="status"/>
+        </Fluent:StatusBar>
+    </Grid>
+</Fluent:RibbonWindow>
